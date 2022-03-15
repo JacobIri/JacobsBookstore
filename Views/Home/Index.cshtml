@@ -1,4 +1,20 @@
 ﻿@{
 }
+@model Book
 
-<h1> Hello</h1>
+<h1> Bookstore Project </h1>
+
+@foreach (Book b in Model)
+{
+    <h3>@b.Title </h3> //b.BookName
+    <ul>
+        <li>Author : @b.Author</li>
+        <li>Publisher : @b.Publisher</li>
+        <li>Isbn Code: @b.Isbn </li>
+        <li>Classification : @b.Classification</li>
+        <li>Category : @b.Category</li>
+        <li>Page Count : @b.PageCount pages</li>
+        <li>Price : $@b.Price</li>
+    </ul>
+    <br />
+}
