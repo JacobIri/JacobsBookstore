@@ -1,12 +1,15 @@
 ﻿@{
+    ViewBag.Calc = 20 / 5;
+
 }
-@model IQueryable<Book>
+@*@model IQueryable<Book> (OLD STUFF, now bringing in more)*@
+@model BooksViewModel
 
 <h1> Bookstore Project </h1>
 
-@foreach (Book b in Model)
+@foreach (Book b in Model.Books)
 {
-    <h3>@b.Title </h3> //b.BookName
+    <h3>@b.Title </h3>
     <ul>
         <li>Author : @b.Author</li>
         <li>Publisher : @b.Publisher</li>
@@ -17,4 +20,12 @@
         <li>Price : $@b.Price</li>
     </ul>
     <br />
+
 }
+
+
+<div page-meh="@Model.PageInfo" page-action="Index"></div>
+
+@* USED TO BE NAVIGATION, not dynamic
+<a asp-action="Index" asp-route-pageNum="1">Back</a>
+<a asp-action="Index" asp-route-pageNum="2">Next</a>*@
