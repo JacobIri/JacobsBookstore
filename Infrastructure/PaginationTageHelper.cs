@@ -43,7 +43,7 @@ namespace JacobsBookstore.Infrastructure
 
             TagBuilder final = new TagBuilder("div"); //This div will be looping through and adding the individual links
 
-            for (int i = 1; i < PageMeh.TotalPages; i++)
+            for (int i = 1; i <= PageMeh.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
